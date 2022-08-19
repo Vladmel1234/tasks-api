@@ -7,7 +7,7 @@ export class TasksController {
   constructor(private TaskService: TasksService) {}
 
   @Post()
-  createPost(@Body() dto: CreateTaskDto) {
+  createTask(@Body() dto: CreateTaskDto) {
     return this.TaskService.create(dto);
   }
 }

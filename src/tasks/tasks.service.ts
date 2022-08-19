@@ -5,10 +5,10 @@ import { Task } from './tasks.model';
 
 @Injectable()
 export class TasksService {
-  constructor(@InjectModel(Task) private postRepository: typeof Task) {}
+  constructor(@InjectModel(Task) private taskRepository: typeof Task) {}
 
   async create(dto: CreateTaskDto) {
-    const task = await this.postRepository.create({ ...dto });
+    const task = await this.taskRepository.create({ ...dto });
     return task;
   }
 }
